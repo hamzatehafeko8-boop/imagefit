@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #15233B;
+  --color-cobalt: #4463F5;
+  --color-lime: #C9F36A;
+  --color-cloud: #F5F7FB;
+  --color-white: #FFFFFF;
+  --color-slate: #657084;
+  --color-border: #E2E7F0;
+  --color-border-strong: #CBD3E1;
+  --color-success: #16815D;
+  --color-warning: #B86D11;
+  --color-error: #C43D4B;
+  --color-info: #316CB5;
+
+  --font-heading: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-cloud);
+    color: var(--color-ink);
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Tabular Numerals for file sizes, dimensions, percentages */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Precision Crop Corner Motif Accents */
+.crop-bracket-tl {
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+.crop-bracket-tr {
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+.crop-bracket-bl {
+  border-bottom: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+.crop-bracket-br {
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
